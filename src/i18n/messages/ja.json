@@ -12973,8 +12973,7 @@
       "continuesFromParent": "親からの続き",
       "continuesFrom": "{id} からの続き",
       "viewConversation": "会話を表示",
-      "openConversation": "会話 {id} を開く",
-      "artifactSize": "Artifact Size"
+      "openConversation": "会話 {id} を開く"
     },
     "tableLabel": "リクエストログ",
     "throughputPostFirstToken": "初回トークン以降",

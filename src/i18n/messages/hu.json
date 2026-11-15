@@ -12973,8 +12973,7 @@
       "continuesFromParent": "a szülő folytatása",
       "continuesFrom": "{id} folytatása",
       "viewConversation": "beszélgetés megtekintése",
-      "openConversation": "A(z) {id} beszélgetés megnyitása",
-      "artifactSize": "Artifact Size"
+      "openConversation": "A(z) {id} beszélgetés megnyitása"
     },
     "tableLabel": "Kérésnaplók",
     "throughputPostFirstToken": "Első token utáni",

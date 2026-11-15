@@ -12973,8 +12973,7 @@
       "continuesFromParent": "wird vom übergeordneten Element fortgesetzt",
       "continuesFrom": "Wird von {id} fortgesetzt",
       "viewConversation": "Konversation anzeigen",
-      "openConversation": "Konversation {id} öffnen",
-      "artifactSize": "Artifact Size"
+      "openConversation": "Konversation {id} öffnen"
     },
     "tableLabel": "Anfrageprotokolle",
     "throughputPostFirstToken": "Nach erstem Token",

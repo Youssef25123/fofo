@@ -12973,8 +12973,7 @@
       "continuesFromParent": "पालकापासून पुढे सुरू राहते",
       "continuesFrom": "{id} पासून पुढे सुरू राहते",
       "viewConversation": "संभाषण पहा",
-      "openConversation": "{id} संभाषण उघडा",
-      "artifactSize": "Artifact Size"
+      "openConversation": "{id} संभाषण उघडा"
     },
     "tableLabel": "विनंती लॉग",
     "throughputPostFirstToken": "पहिल्या टोकननंतर",

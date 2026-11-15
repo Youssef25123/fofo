@@ -12973,8 +12973,7 @@
       "continuesFromParent": "يتابع من الأصل",
       "continuesFrom": "يتابع من {id}",
       "viewConversation": "عرض المحادثة",
-      "openConversation": "فتح المحادثة {id}",
-      "artifactSize": "Artifact Size"
+      "openConversation": "فتح المحادثة {id}"
     },
     "tableLabel": "سجلات الطلبات",
     "throughputPostFirstToken": "ما بعد الرمز الأول",

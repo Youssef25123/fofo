@@ -12973,8 +12973,7 @@
       "continuesFromParent": "продовжується від батьківського елемента",
       "continuesFrom": "Продовжується з {id}",
       "viewConversation": "переглянути розмову",
-      "openConversation": "Відкрити розмову {id}",
-      "artifactSize": "Artifact Size"
+      "openConversation": "Відкрити розмову {id}"
     },
     "tableLabel": "Журнали запитів",
     "throughputPostFirstToken": "Після першого токена",

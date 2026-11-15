@@ -12973,8 +12973,7 @@
       "continuesFromParent": "continua da requisição pai",
       "continuesFrom": "Continua de {id}",
       "viewConversation": "ver conversa",
-      "openConversation": "Abrir conversa {id}",
-      "artifactSize": "Tamanho do Artefato"
+      "openConversation": "Abrir conversa {id}"
     },
     "tableLabel": "Logs de requisições",
     "throughputPostFirstToken": "Pós-primeiro token",

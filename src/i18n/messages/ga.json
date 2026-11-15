@@ -12973,8 +12973,7 @@
       "continuesFromParent": "leanann ón máthair",
       "continuesFrom": "Leanann ó {id}",
       "viewConversation": "féach ar an gcomhrá",
-      "openConversation": "Oscail comhrá {id}",
-      "artifactSize": "Artifact Size"
+      "openConversation": "Oscail comhrá {id}"
     },
     "tableLabel": "Logaí iarratais",
     "throughputPostFirstToken": "Tar éis an chéad token",

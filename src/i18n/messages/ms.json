@@ -12973,8 +12973,7 @@
       "continuesFromParent": "bersambung daripada induk",
       "continuesFrom": "Bersambung daripada {id}",
       "viewConversation": "lihat perbualan",
-      "openConversation": "Buka perbualan {id}",
-      "artifactSize": "Artifact Size"
+      "openConversation": "Buka perbualan {id}"
     },
     "tableLabel": "Log permintaan",
     "throughputPostFirstToken": "Selepas-token-pertama",

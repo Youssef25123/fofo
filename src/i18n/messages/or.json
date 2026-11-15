@@ -12973,8 +12973,7 @@
       "continuesFromParent": "ପ୍ୟାରେଣ୍ଟରୁ ଜାରି ରହିଛି",
       "continuesFrom": "{id}ରୁ ଜାରି ରହିଛି",
       "viewConversation": "ବାର୍ତ୍ତାଳାପ ଦେଖନ୍ତୁ",
-      "openConversation": "ବାର୍ତ୍ତାଳାପ {id} ଖୋଲନ୍ତୁ",
-      "artifactSize": "Artifact Size"
+      "openConversation": "ବାର୍ତ୍ତାଳାପ {id} ଖୋଲନ୍ତୁ"
     },
     "tableLabel": "ଅନୁରୋଧ ଲଗ୍ଗୁଡ଼ିକ",
     "throughputPostFirstToken": "ପ୍ରଥମ ଟୋକନ୍ ପରେ",

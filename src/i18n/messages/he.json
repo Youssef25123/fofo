@@ -12973,8 +12973,7 @@
       "continuesFromParent": "ממשיך מהאב",
       "continuesFrom": "ממשיך מ־{id}",
       "viewConversation": "הצגת השיחה",
-      "openConversation": "פתיחת השיחה {id}",
-      "artifactSize": "Artifact Size"
+      "openConversation": "פתיחת השיחה {id}"
     },
     "tableLabel": "יומני בקשות",
     "throughputPostFirstToken": "לאחר הטוקן הראשון",

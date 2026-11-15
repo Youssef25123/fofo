@@ -12973,8 +12973,7 @@
       "continuesFromParent": "nagpapatuloy mula sa parent",
       "continuesFrom": "Nagpapatuloy mula sa {id}",
       "viewConversation": "tingnan ang pag-uusap",
-      "openConversation": "Buksan ang pag-uusap na {id}",
-      "artifactSize": "Artifact Size"
+      "openConversation": "Buksan ang pag-uusap na {id}"
     },
     "tableLabel": "Mga log ng request",
     "throughputPostFirstToken": "Pagkatapos ng unang token",

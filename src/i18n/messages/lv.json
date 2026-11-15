@@ -12973,8 +12973,7 @@
       "continuesFromParent": "turpinās no vecākelementa",
       "continuesFrom": "Turpinās no {id}",
       "viewConversation": "skatīt sarunu",
-      "openConversation": "Atvērt sarunu {id}",
-      "artifactSize": "Artifact Size"
+      "openConversation": "Atvērt sarunu {id}"
     },
     "tableLabel": "Pieprasījumu žurnāli",
     "throughputPostFirstToken": "Pēc pirmā marķiera",

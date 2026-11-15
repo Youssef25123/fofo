@@ -12973,8 +12973,7 @@
       "continuesFromParent": "շարունակվում է ծնողից",
       "continuesFrom": "Շարունակվում է {id}-ից",
       "viewConversation": "դիտել զրույցը",
-      "openConversation": "Բացել {id} զրույցը",
-      "artifactSize": "Artifact Size"
+      "openConversation": "Բացել {id} զրույցը"
     },
     "tableLabel": "Հարցումների մատյաններ",
     "throughputPostFirstToken": "Առաջին թոքենից հետո",

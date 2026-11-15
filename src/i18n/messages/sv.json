@@ -12973,8 +12973,7 @@
       "continuesFromParent": "fortsätter från överordnad",
       "continuesFrom": "Fortsätter från {id}",
       "viewConversation": "visa konversation",
-      "openConversation": "Öppna konversation {id}",
-      "artifactSize": "Artifact Size"
+      "openConversation": "Öppna konversation {id}"
     },
     "tableLabel": "Förfrågningsloggar",
     "throughputPostFirstToken": "Efter första token",

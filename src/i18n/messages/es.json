@@ -12973,8 +12973,7 @@
       "continuesFromParent": "continúa desde el elemento principal",
       "continuesFrom": "Continúa desde {id}",
       "viewConversation": "ver conversación",
-      "openConversation": "Abrir conversación {id}",
-      "artifactSize": "Tamaño del Artefacto"
+      "openConversation": "Abrir conversación {id}"
     },
     "tableLabel": "Registros de solicitudes",
     "throughputPostFirstToken": "Después del primer token",

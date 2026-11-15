@@ -12973,8 +12973,7 @@
       "continuesFromParent": "continua dal padre",
       "continuesFrom": "Continua da {id}",
       "viewConversation": "visualizza conversazione",
-      "openConversation": "Apri conversazione {id}",
-      "artifactSize": "Artifact Size"
+      "openConversation": "Apri conversazione {id}"
     },
     "tableLabel": "Log delle richieste",
     "throughputPostFirstToken": "Dopo il primo token",

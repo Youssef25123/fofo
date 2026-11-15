@@ -12973,8 +12973,7 @@
       "continuesFromParent": "ਪੈਰੈਂਟ ਤੋਂ ਜਾਰੀ ਹੈ",
       "continuesFrom": "{id} ਤੋਂ ਜਾਰੀ ਹੈ",
       "viewConversation": "ਗੱਲਬਾਤ ਵੇਖੋ",
-      "openConversation": "ਗੱਲਬਾਤ {id} ਖੋਲ੍ਹੋ",
-      "artifactSize": "Artifact Size"
+      "openConversation": "ਗੱਲਬਾਤ {id} ਖੋਲ੍ਹੋ"
     },
     "tableLabel": "ਬੇਨਤੀ ਲੌਗ",
     "throughputPostFirstToken": "ਪਹਿਲੇ ਟੋਕਨ ਤੋਂ ਬਾਅਦ",

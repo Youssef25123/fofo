@@ -7438,10 +7438,7 @@
     "chatgptConnectorLabel": "Muunganishaji maalum wa ChatGPT",
     "doctorChecking": "Inathibitisha hali…",
     "doctorCheck": "Thibitisha hali ya mwanga",
-    "fallbackRetryBackendTitle": "Backend ya jaribio la upandaji",
-    "statusVerificationRequired": "Uthibitishaji unahitajika",
-    "errorTypeVerificationRequired": "Uthibitishaji unahitajika",
-    "errorTypeAgeVerification": "Uthibitishaji wa umri unahitajika"
+    "fallbackRetryBackendTitle": "Backend ya jaribio la upandaji"
   },
   "settings": {
     "proxyTraffic": {

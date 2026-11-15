@@ -7438,10 +7438,7 @@
     "chatgptConnectorLabel": "ChatGPT anpassad koppling",
     "doctorChecking": "Kontrollerar status…",
     "doctorCheck": "Kontrollera läkarestatus",
-    "fallbackRetryBackendTitle": "Reserverad återförsöksbackend",
-    "statusVerificationRequired": "Verifiering krävs",
-    "errorTypeVerificationRequired": "Verifiering krävs",
-    "errorTypeAgeVerification": "Åldersverifiering krävs"
+    "fallbackRetryBackendTitle": "Reserverad återförsöksbackend"
   },
   "settings": {
     "proxyTraffic": {

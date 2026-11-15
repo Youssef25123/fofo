@@ -7438,10 +7438,7 @@
     "chatgptConnectorLabel": "کانکتور سفارشی ChatGPT",
     "doctorChecking": "در حال بررسی وضعیت…",
     "doctorCheck": "بررسی وضعیت داکتور",
-    "fallbackRetryBackendTitle": "بک‌اند تلاش مجدد جایگزین",
-    "statusVerificationRequired": "تأیید لازم است",
-    "errorTypeVerificationRequired": "تأیید لازم است",
-    "errorTypeAgeVerification": "تأیید سن لازم است"
+    "fallbackRetryBackendTitle": "بک‌اند تلاش مجدد جایگزین"
   },
   "settings": {
     "proxyTraffic": {

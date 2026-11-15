@@ -7438,10 +7438,7 @@
     "chatgptConnectorLabel": "Користувацький конектор ChatGPT",
     "doctorChecking": "Перевірка статусу…",
     "doctorCheck": "Перевірити статус doctor",
-    "fallbackRetryBackendTitle": "Резервний бекенд повторної спроби",
-    "statusVerificationRequired": "Потрібна перевірка",
-    "errorTypeVerificationRequired": "Потрібна перевірка",
-    "errorTypeAgeVerification": "Потрібне підтвердження віку"
+    "fallbackRetryBackendTitle": "Резервний бекенд повторної спроби"
   },
   "settings": {
     "proxyTraffic": {

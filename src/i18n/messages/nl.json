@@ -7438,10 +7438,7 @@
     "chatgptConnectorLabel": "ChatGPT aangepaste connector",
     "doctorChecking": "Status wordt gecontroleerd…",
     "doctorCheck": "Doctor-status controleren",
-    "fallbackRetryBackendTitle": "Fallback-back-end voor opnieuw proberen",
-    "statusVerificationRequired": "Verificatie vereist",
-    "errorTypeVerificationRequired": "Verificatie vereist",
-    "errorTypeAgeVerification": "Leeftijdsverificatie vereist"
+    "fallbackRetryBackendTitle": "Fallback-back-end voor opnieuw proberen"
   },
   "settings": {
     "proxyTraffic": {

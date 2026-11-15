@@ -7438,10 +7438,7 @@
     "chatgptConnectorLabel": "Niestandardowy konektor ChatGPT",
     "doctorChecking": "Sprawdzanie statusu…",
     "doctorCheck": "Sprawdź status narzędzia diagnostycznego",
-    "fallbackRetryBackendTitle": "Alternatywny backend ponawiania",
-    "statusVerificationRequired": "Wymagana weryfikacja",
-    "errorTypeVerificationRequired": "Wymagana weryfikacja",
-    "errorTypeAgeVerification": "Wymagana weryfikacja wieku"
+    "fallbackRetryBackendTitle": "Alternatywny backend ponawiania"
   },
   "settings": {
     "proxyTraffic": {

@@ -7438,10 +7438,7 @@
     "chatgptConnectorLabel": "ChatGPT-mukautettu liittimen",
     "doctorChecking": "Tarkistetaan tilaa…",
     "doctorCheck": "Tarkista doctor-tila",
-    "fallbackRetryBackendTitle": "Vaihtoehtoinen uudelleenyritysbackendi",
-    "statusVerificationRequired": "Vahvistus vaaditaan",
-    "errorTypeVerificationRequired": "Vahvistus vaaditaan",
-    "errorTypeAgeVerification": "Iän vahvistus vaaditaan"
+    "fallbackRetryBackendTitle": "Vaihtoehtoinen uudelleenyritysbackendi"
   },
   "settings": {
     "proxyTraffic": {

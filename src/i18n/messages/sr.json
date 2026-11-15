@@ -7438,10 +7438,7 @@
     "chatgptConnectorLabel": "ChatGPT прилагођени конектор",
     "doctorChecking": "Провера статуса…",
     "doctorCheck": "Провери статус лекара",
-    "fallbackRetryBackendTitle": "Задња резорна линија за поновни покушај",
-    "statusVerificationRequired": "Потребна верификација",
-    "errorTypeVerificationRequired": "Потребна верификација",
-    "errorTypeAgeVerification": "Потребна верификација узраста"
+    "fallbackRetryBackendTitle": "Задња резорна линија за поновни покушај"
   },
   "settings": {
     "proxyTraffic": {

@@ -7438,10 +7438,7 @@
     "chatgptConnectorLabel": "موصل ChatGPT المخصص",
     "doctorChecking": "جارٍ التحقق من الحالة…",
     "doctorCheck": "التحقق من حالة الطبيب",
-    "fallbackRetryBackendTitle": "الخادم الاحتياطي لإعادة المحاولة",
-    "statusVerificationRequired": "التحقق مطلوب",
-    "errorTypeVerificationRequired": "التحقق مطلوب",
-    "errorTypeAgeVerification": "التحقق من العمر مطلوب"
+    "fallbackRetryBackendTitle": "الخادم الاحتياطي لإعادة المحاولة"
   },
   "settings": {
     "proxyTraffic": {

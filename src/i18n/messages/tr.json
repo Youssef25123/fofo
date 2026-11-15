@@ -7438,10 +7438,7 @@
     "chatgptConnectorLabel": "ChatGPT özel bağlantı noktası",
     "doctorChecking": "Durum kontrol ediliyor…",
     "doctorCheck": "Doktor durumunu kontrol et",
-    "fallbackRetryBackendTitle": "Yedekleme yeniden deneme arka ucu",
-    "statusVerificationRequired": "Doğrulama Gerekli",
-    "errorTypeVerificationRequired": "Doğrulama gerekli",
-    "errorTypeAgeVerification": "Yaş doğrulaması gerekli"
+    "fallbackRetryBackendTitle": "Yedekleme yeniden deneme arka ucu"
   },
   "settings": {
     "proxyTraffic": {

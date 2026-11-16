@@ -45,6 +45,8 @@ export {
 
 import { HTTP_STATUS } from "../../config/constants.ts";
 import { buildMalformedResponseDiagnostic } from "../../utils/responseShapeDiagnostic.ts";
+import { requiredToolGuardReason } from "../../utils/requiredToolGuard.ts";
+import { isToolCallGuardEnabled, scanToolCalls } from "../../utils/toolCallGuard.ts";
 
 import { lockModel } from "../../services/accountFallback.ts";
 
@@ -817,6 +819,25 @@ export async function runNonStreamingResponse(deps: NonStreamingDeps) {
       );
     }
 
+    // Opt-in observe-mode tool-call guard (OMNIROUTE_TOOL_CALL_GUARD_OBSERVE): audit row only,
+    // the reply is never changed. Rule ids and offsets, never argument text.
+    if (isToolCallGuardEnabled()) {
+      try {
+        const findings = scanToolCalls(translatedResponse);
+        if (findings.length > 0) {
+          logAuditEvent({
+            action: "tool_call_guard.observed",
+            actor: apiKeyInfo?.name || "system",
+            target: connectionId || provider || "chat",
+            requestId: traceId,
+            details: { mode: "observe", provider, model, findings },
+          });
+        }
+      } catch {
+        // observation only: a scan or audit failure never reaches the client
+      }
+    }
+
     const guardrailContext = buildPostCallGuardrailContext({
       apiKeyInfo,
       body,
@@ -906,11 +927,18 @@ export async function runNonStreamingResponse(deps: NonStreamingDeps) {
     // this check runs after translation + sanitization + tool-call execution to catch
     // cases where a provider returns a structurally valid raw body that translates into
     // choices:[] or output:[] with no usable content (Responses API shape included).
-    const malformedTranslatedReason = detectMalformedNonStream(
-      translatedResponse,
-      provider,
-      hasTrustedEmptyTurn(providerResponse)
-    );
+    const malformedTranslatedReason =
+      detectMalformedNonStream(
+        translatedResponse,
+        provider,
+        hasTrustedEmptyTurn(providerResponse)
+      ) ??
+      // Opt-in (OMNIROUTE_REQUIRED_TOOL_GUARD): a forced tool call that never happened.
+      requiredToolGuardReason(
+        body,
+        translatedResponse,
+        toolLoopRan || customSkillExecutionEnabled || builtinToolNames.length > 0
+      );
     if (malformedTranslatedReason) {
       const malformedDiagnostic = buildMalformedResponseDiagnostic(
         malformedTranslatedReason,

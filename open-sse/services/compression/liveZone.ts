@@ -526,7 +526,27 @@ function restoreFrozenPrefix(rawItems: unknown[], previous: LiveZoneEntry): unkn
     if (value === null) return null;
     frozenPrefix[patch.index] = value;
   }
-  return frozenPrefix;
+  // Stored items keep the breakpoint they had on their own turn; the client moves it every turn.
+  // Replaying stale markers piles them up past Anthropic's 4-block limit (HTTP 400).
+  return frozenPrefix.map((item, index) => withClientCacheControl(item, rawItems[index]));
+}
+
+/** `transformed` with every cache_control removed, then re-placed where `raw` has one. */
+function withClientCacheControl(transformed: unknown, raw: unknown): unknown {
+  const stripped = stripCacheControl(transformed);
+  copyCacheControl(stripped, raw);
+  return stripped;
+}
+
+function copyCacheControl(target: unknown, raw: unknown): void {
+  if (!target || typeof target !== "object" || !raw || typeof raw !== "object") return;
+  if (Array.isArray(target) !== Array.isArray(raw)) return;
+  const source = raw as Record<string, unknown>;
+  const dest = target as Record<string, unknown>;
+  for (const key of Object.keys(source)) {
+    if (key === "cache_control") dest.cache_control = cloneValue(source.cache_control);
+    else if (key in dest) copyCacheControl(dest[key], source[key]);
+  }
 }
 
 /** Keep the last assistant turn as read-only context for new tool outputs. */

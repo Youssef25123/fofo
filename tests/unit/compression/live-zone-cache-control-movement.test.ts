@@ -62,7 +62,9 @@ function claudeCodeBody(turns: number) {
   for (let i = 0; i < turns; i++) {
     messages.push({
       role: "assistant",
-      content: [{ type: "tool_use", id: `toolu_${i}`, name: "Bash", input: { command: `step ${i}` } }],
+      content: [
+        { type: "tool_use", id: `toolu_${i}`, name: "Bash", input: { command: `step ${i}` } },
+      ],
     });
     messages.push({
       role: "user",
@@ -107,10 +109,14 @@ describe("live-zone with a moving cache_control breakpoint", () => {
     };
     const secondResult = await applyLiveZoneCompression(second, options, compress);
 
+    const secondFrozen = (secondResult.body.messages as Array<Record<string, unknown>>).slice(0, 2);
+    // The client's breakpoint is honoured; everything else in the frozen prefix is unchanged.
+    assert.deepEqual(secondFrozen[1].cache_control, { type: "ephemeral" });
+    const { cache_control: _marker, ...unmarked } = secondFrozen[1];
     assert.equal(
-      JSON.stringify((secondResult.body.messages as unknown[]).slice(0, 2)),
+      JSON.stringify([secondFrozen[0], unmarked]),
       frozenBytes,
-      "the frozen prefix must stay byte-identical when the marker moves"
+      "the frozen prefix must stay byte-identical apart from the client's marker"
     );
     assert.equal(secondResult.stats?.liveZone?.cacheHit, true);
     // A full recompress would hand the whole history to the engine again.
@@ -134,15 +140,41 @@ describe("live-zone with a moving cache_control breakpoint", () => {
 
     // The frozen history must keep its compressed bytes as the marker advances.
     const before = JSON.stringify(
-      ((await applyLiveZoneCompression(claudeCodeBody(4), options, compress)).body as {
-        messages: unknown[];
-      }).messages.slice(0, 7)
+      (
+        (await applyLiveZoneCompression(claudeCodeBody(4), options, compress)).body as {
+          messages: unknown[];
+        }
+      ).messages.slice(0, 7)
     );
     const after = JSON.stringify(
-      ((await applyLiveZoneCompression(claudeCodeBody(5), options, compress)).body as {
-        messages: unknown[];
-      }).messages.slice(0, 7)
+      (
+        (await applyLiveZoneCompression(claudeCodeBody(5), options, compress)).body as {
+          messages: unknown[];
+        }
+      ).messages.slice(0, 7)
     );
     assert.equal(after, before, "frozen prefix must not be rewritten when the marker moves");
+  });
+
+  it("sends only the client's current markers, never stale ones from frozen turns", async () => {
+    // Regression: reuse replayed each frozen turn's old breakpoint, so markers piled up
+    // until Anthropic rejected the request ("A maximum of 4 blocks with cache_control").
+    const compress = toolCompressor([]);
+    const markerPaths = (messages: unknown[]) =>
+      messages.flatMap((msg, i) =>
+        ((msg as { content: Array<Record<string, unknown>> }).content ?? [])
+          .map((block, j) => (block.cache_control ? `${i}.${j}` : null))
+          .filter(Boolean)
+      );
+
+    for (let turns = 1; turns <= 6; turns++) {
+      const raw = claudeCodeBody(turns);
+      const out = await applyLiveZoneCompression(structuredClone(raw), options, compress);
+      assert.deepEqual(
+        markerPaths(out.body.messages as unknown[]),
+        markerPaths(raw.messages),
+        `turn ${turns} must carry exactly the client's markers`
+      );
+    }
   });
 });

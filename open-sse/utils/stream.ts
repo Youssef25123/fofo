@@ -293,6 +293,8 @@ type TranslateState = ReturnType<typeof initState> & {
     message: string;
     streamSnapshot?: import("./streamErrorFormat.ts").StreamFailureSnapshot;
   } | null;
+  /** The upstream sent `[DONE]`: its end of stream is a finish, not a cut. */
+  doneMarkerSeen?: boolean;
 };
 
 type UsageTokenRecord = Record<string, number>;
@@ -2712,6 +2714,8 @@ export function createSSEStream(options: StreamOptions = {}) {
           if (shouldDropResponsesCommentary && dropCommentary(parsed as JsonRecord)) continue;
           observeProviderPayload(parsed);
           if (parsed && parsed.done) {
+            // The translators flush at stream end; [DONE] tells them the upstream finished.
+            if (state) state.doneMarkerSeen = true;
             continue;
           }
           sanitizeUsagePayloadForRequest(parsed, body, targetFormat);

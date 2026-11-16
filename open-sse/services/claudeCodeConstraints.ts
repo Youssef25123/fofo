@@ -324,11 +324,16 @@ export function ensureCacheControlOnLastUserMessage(
 }
 
 /**
- * Defaults a missing `cache_control.ttl` to "5m" — Anthropic's own default for
- * `ephemeral`. A client that decided on the 1h TTL states it explicitly (Claude
- * Code sends `{type:"ephemeral"}` with no ttl when its decision is 5m), and only
- * an explicit 1h pulls the earlier breakpoints up with it, since Anthropic needs
- * the TTLs to be non-increasing.
+ * Raises earlier breakpoints to "1h" when a later breakpoint states it.
+ *
+ * A missing `ttl` is left missing: `{type:"ephemeral"}` already means Anthropic's
+ * 5-minute default, and Claude Code sends exactly that — it never states `ttl:"5m"`.
+ * Materialising `"5m"` would send a marker set the client never wrote, which is a
+ * byte-level prefix divergence and a prompt-cache miss.
+ *
+ * The only rewrite Anthropic requires is ordering: longer TTLs must come first, so
+ * a `1h` marker forces every earlier (implicit-5m) marker up to `1h` or the request
+ * is rejected. Markers after the last explicit `1h` are never touched.
  */
 export function normalizeCacheControlTtl(body: Record<string, unknown>): void {
   const ephemeralCacheControls: Array<Record<string, unknown>> = [];
@@ -337,7 +342,6 @@ export function normalizeCacheControlTtl(body: Record<string, unknown>): void {
     const cc = block?.cache_control as Record<string, unknown> | undefined;
     if (!cc || cc.type !== "ephemeral") return;
 
-    if (cc.ttl === undefined) cc.ttl = "5m";
     if (cc.ttl === "1h") {
       for (const earlier of ephemeralCacheControls) earlier.ttl = "1h";
     }
